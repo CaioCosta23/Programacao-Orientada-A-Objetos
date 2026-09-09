@@ -42,4 +42,12 @@ public class Carro {
     public void setKm(float km) {
         this.km = km;
     }
+
+    public void imprimeInformacoesCarro() {
+        System.out.println("- Placa: " + this.getPlaca());
+        System.out.println("- Modelo: " + this.getModelo());
+        System.out.println("- Marca: " + this.getMarca());
+        System.out.println("- Quilometragem: " + this.getKm());
+
+    }
 }
