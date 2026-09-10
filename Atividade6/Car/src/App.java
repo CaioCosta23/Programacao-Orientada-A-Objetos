@@ -8,7 +8,7 @@ public class App {
         System.out.println("Carro 1:");
         carro1.imprimeInformacoesCarro();
 
-        System.out.println("------------------------------------------------");
+        System.out.println("--------------------------------------------------");
 
         System.out.println("Carro 2:");
         carro2.imprimeInformacoesCarro();
