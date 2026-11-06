@@ -27,9 +27,9 @@ public class App {
             if ((opcao != DEPARTAMENTO_TECNOLOGIA) || (opcao != DEPARTAMENTO_ELETRICA))
                 break;
 
-            
-            leitor.close();
         }
+
+        leitor.close();
 
         if (quantidadeDepartamentos >= 0) {
             int d;
