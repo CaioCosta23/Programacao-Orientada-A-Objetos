@@ -1,7 +1,7 @@
 public abstract class Departamento {
     protected String nome;
     private String descricao;
-    private static float salario;
+    protected static float salario;
 
     public Departamento(String nome, String descricao, float salario) {
         this.nome = nome;
