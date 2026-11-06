@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        Scanner leitor = new Scanner(System.in);
+
         final int DEPARTAMENTO_TECNOLOGIA = 1;
         final int DEPARTAMENTO_ELETRICA = 2;
         
@@ -19,37 +21,7 @@ public class App {
             System.out.println("# Escolha um dos departamentos que deseja inserir o funcionário:");
             System.out.println("[1] Tecnologia\t [2] Elétrica");
 
-            Scanner leitor = new Scanner(System.in);
-
-            operacao = leitor.next();
-            opcao = Integer.parseInt(operacao);
-
-            if ((opcao != DEPARTAMENTO_TECNOLOGIA) || (opcao != DEPARTAMENTO_ELETRICA)) {
-                break;
-            }
-
-            // Ainda necessário ver como criar o vetor de funcionários (sem estruturas de dados);
-
-            System.out.println("- Digíte o nome do funcionário: ");
-                
-            nome = leitor.next();
-
-            System.out.println("- Informe a função do funcionário no departamento: ");
             
-            funcao = leitor.next();
-
-            System.out.println("- Informe o nome do funcionário: ");
-            
-            salario = leitor.nextInt();
-
-            if (opcao == DEPARTAMENTO_TECNOLOGIA) {
-                String area;
-
-                System.out.println("Informe a área de atuação: ");
-                
-                area = leitor.next();
-            }
-
             leitor.close();
         }
 
