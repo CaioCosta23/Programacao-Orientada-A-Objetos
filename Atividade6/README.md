@@ -1,4 +1,4 @@
-# Automóvis :car:
+# Automóveis :car:
 
 Este projeto simula a coleta e exibição de dados de veículos.
 
@@ -11,6 +11,11 @@ Este projeto simula a coleta e exibição de dados de veículos.
 
 ---
 
-## Dependency Management
+## Conteúdos Abordados :books:
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- Variáveis:
+- Tipos
+- Operadores:
+- Classes:
+- Visibilidade:
+- Funçoẽs Básicas:
