@@ -4,7 +4,7 @@ Este projeto simula a coleta e exibição de dados de veículos.
 
 ---
 
-## Estrutura de projeto :folder:
+## Estrutura de projeto :file_folder:
 
 - _src:_
 - _bin:_
