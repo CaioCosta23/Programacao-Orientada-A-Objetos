@@ -1,12 +1,12 @@
 public abstract class Departamento {
     protected String nome;
     private String descricao;
-    private float salario;
+    private static float salario;
 
     public Departamento(String nome, String descricao, float salario) {
         this.nome = nome;
         this.descricao = descricao;
-        this.salario = salario;
+        Departamento.salario = salario;
     }
 
     public String getNome() {
@@ -25,12 +25,8 @@ public abstract class Departamento {
         this.descricao = descricao;
     }
 
-    protected float getSalario() {
-        return this.salario;
-    }
-
     protected void setSalario(float salario) {
-        this.salario = salario;
+        Departamento.salario = salario;
     }
 
     public abstract void imprimeDadosDepartamento();
