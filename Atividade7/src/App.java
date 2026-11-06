@@ -21,6 +21,12 @@ public class App {
             System.out.println("# Escolha um dos departamentos que deseja inserir o funcionário:");
             System.out.println("[1] Tecnologia\t [2] Elétrica");
 
+            operacao = leitor.next();
+            opcao = Integer.parseInt(operacao);
+
+            if ((opcao != DEPARTAMENTO_TECNOLOGIA) || (opcao != DEPARTAMENTO_ELETRICA))
+                break;
+
             
             leitor.close();
         }
