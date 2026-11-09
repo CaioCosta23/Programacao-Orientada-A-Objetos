@@ -4,34 +4,77 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner leitor = new Scanner(System.in);
 
-        final int DEPARTAMENTO_TECNOLOGIA = 1;
-        final int DEPARTAMENTO_ELETRICA = 2;
+        final int ADICIONAR = 1, EDITAR = 2, OPCAO_TECNOLOGIA = 1, OPCAO_ELETRICA = 2;
+        final String TECNOLOGIA = "Tecnologia", ELETRICA = "Eletrica";
         
+        int operacao, opcao;
         int quantidadeDepartamentos = 0;
-        int opcao;
-        String operacao, nome, funcao;
-        float salario;
-
-        Departamento tecnologia = new DepartamentoTecnologia();
-        Departamento eletrica = new DepartamentoEletrica();
+        String descricao;
+        float salario, bonus;
 
         System.out.println("-> Empresa POO");
 
         while(true){
-            System.out.println("# Escolha um dos departamentos que deseja inserir o funcionário:");
-            System.out.println("[1] Tecnologia\t [2] Elétrica");
+            System.out.print("# Escolha um dos departamentos que deseja inserir o funcionário:");
+            System.out.print("[1] Adicionar Departamento\t [2] Editar dados de departamento");
 
-            operacao = leitor.next();
-            opcao = Integer.parseInt(operacao);
+            operacao = Integer.parseInt(leitor.next());
 
-            if ((opcao != DEPARTAMENTO_TECNOLOGIA) || (opcao != DEPARTAMENTO_ELETRICA))
+            if ((operacao != ADICIONAR) && (operacao != EDITAR))
                 break;
+            
+            System.out.print("# Escolha um dos departamentos que deseja realizar a operação:");
+            System.out.print("[1] Tecnologia\t [2] Elétrica");
+            opcao = Integer.parseInt(leitor.next());
+
+            switch(operacao) {
+                case ADICIONAR:
+                    Departamento tecnologia, eletrica;
+
+                    System.out.print("-Digite a descrição das atribuições/funcões do departamento: ");
+                    descricao = leitor.nextLine();
+                    System.out.print("- Digite o salário (base) do departamento: ");
+                    salario = Float.parseFloat(leitor.next());
+                    System.out.print("- Informe o bônus atribuído ao departamento: ");
+                    bonus = Float.parseFloat(leitor.next());
+
+                    if (opcao == OPCAO_TECNOLOGIA) {
+                        String area;
+
+                        System.out.print("- Informe a área de atuação: ");
+                        area = leitor.nextLine();
+
+                        tecnologia = new DepartamentoTecnologia(TECNOLOGIA, descricao, salario, area, bonus);
+                        quantidadeDepartamentos++;
+
+                    }else if (opcao == OPCAO_ELETRICA) {
+                        String areaApoio, especialidade;
+
+                        System.out.print("- Informe a área de apoio do departamento:");
+                        areaApoio = leitor.nextLine();
+                        System.out.print("- Informe a especialização do departamento: ");
+                        especialidade = leitor.nextLine();
+
+                        eletrica = new DepartamentoEletrica(ELETRICA, descricao, salario, bonus, areaApoio, especialidade);
+                        quantidadeDepartamentos++;
+                    }else {
+                        System.out.println("* Departamento não encontrado. Digite uma das opções de departameno válidas (1 ou 2).");
+                    }
+
+                    break;
+                case EDITAR:
+                    if (quantidadeDepartamentos < 1)
+                            System.out.println("* Não é possível editar departamentos pois a lista de departamentos está vazia.");
+                    break;
+                default:
+                    System.out.println("Operação inexistente no sistema! Informe uma opção de departamento válida (1 ou 2).");
+                    break;
+            }
 
         }
 
         leitor.close();
-
-        if (quantidadeDepartamentos >= 0) {
+        /*        if (quantidadeDepartamentos >= 0) {
             int d;
 
             tecnologia.imprimeDadosDepartamento();
@@ -39,5 +82,6 @@ public class App {
         }else {
             System.out.println("Departamentos vazios.\n");
         }
+        */
     }
 }
