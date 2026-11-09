@@ -1,12 +1,10 @@
 public class Funcionario {
    private String nome;
    private String funcao;
-   private float bonus;
    
-   public Funcionario(String nome, String funcao, float bonus) {
+   public Funcionario(String nome, String funcao) {
         this.nome = nome;
         this.funcao = funcao;
-        this.bonus = bonus;
    }
 
    public String getNome() {
@@ -25,14 +23,6 @@ public class Funcionario {
         this.funcao = funcao;
    }
 
-   public float getBonus() {
-        return this.bonus;
-   }
-
-   public void setBonus(float bonus) {
-        this.bonus = bonus;
-   }
-
    protected void imprimeNome() {
         System.out.println("* Nome do funcionário:" + this.nome);
    }
@@ -41,13 +31,8 @@ public class Funcionario {
         System.out.println("* Função" + this.funcao);
    }
 
-   protected void imprimeSalario() {
-        System.out.println("* Salario: R$" + (Departamento.salario + (Departamento.salario * bonus)));
-   }
-
    public void imprimeDadosFuncionario() {
         imprimeNome();
         imprimeFuncao();
-        imprimeSalario();
    }
 }
