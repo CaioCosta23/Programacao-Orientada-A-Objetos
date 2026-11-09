@@ -1,5 +1,5 @@
 public class DepartamentoEletrica extends Departamento implements Operacoes {
-    private String areaApoio;
+    private final String areaApoio;
     private String especializacao;
     
     public DepartamentoEletrica(String nome, String descricao, float salario, float bonus, String areaApoio, String especializacao) {
@@ -10,10 +10,6 @@ public class DepartamentoEletrica extends Departamento implements Operacoes {
 
     public String getAreaApoio() {
         return this.areaApoio;
-    }
-
-    public void setareaApoio(String areaApoio) {
-        this.areaApoio = areaApoio;
     }
 
     public String getEspecializacao() {
