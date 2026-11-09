@@ -1,11 +1,9 @@
 public class DepartamentoTecnologia extends Departamento implements Operacoes {
     private String area;
-    private static float bonus;
 
     public DepartamentoTecnologia(String nome, String descricao, float salario, String area, float bonus) {
-        super(nome, descricao, salario);
+        super(nome, descricao, salario, bonus);
         this.area = area;
-        DepartamentoTecnologia.bonus = bonus;
     }
 
     public String getArea() {
@@ -15,18 +13,10 @@ public class DepartamentoTecnologia extends Departamento implements Operacoes {
     public void setArea(String area) {
         this.area = area;
     }
-
-    public float getBonus(){
-        return DepartamentoTecnologia.bonus;
-    }
-
-    protected void setBonus(float bonus) {
-        DepartamentoTecnologia.bonus = bonus;
-    }
     
     @Override
     public float calculaSalarioTotal() {
-        return Departamento.salario + (Departamento.salario * DepartamentoTecnologia.salario);
+        return Departamento.salario + (Departamento.salario * Departamento.bonus);
     }
 
     @Override
