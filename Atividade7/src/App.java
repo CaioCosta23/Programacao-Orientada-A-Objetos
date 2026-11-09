@@ -4,13 +4,15 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner leitor = new Scanner(System.in);
 
-        final int ADICIONAR = 1, EDITAR = 2, OPCAO_TECNOLOGIA = 1, OPCAO_ELETRICA = 2;
+        final int ADICIONAR = 1, EDITAR = 2, OPCAO_TECNOLOGIA = 1, OPCAO_ELETRICA = 2, MAXIMO_DEPARTAMENTOS = 2;
         final String TECNOLOGIA = "Tecnologia", ELETRICA = "Eletrica";
         
         int operacao, opcao;
         int quantidadeDepartamentos = 0;
         String descricao;
         float salario, bonus;
+
+        Departamento tecnologia = null, eletrica = null;
 
         System.out.println("-> Empresa POO");
 
@@ -22,21 +24,24 @@ public class App {
 
             if ((operacao != ADICIONAR) && (operacao != EDITAR))
                 break;
-            
+
             System.out.print("# Escolha um dos departamentos que deseja realizar a operação:");
             System.out.print("[1] Tecnologia\t [2] Elétrica");
             opcao = Integer.parseInt(leitor.next());
 
             switch(operacao) {
                 case ADICIONAR:
-                    Departamento tecnologia, eletrica;
-
                     System.out.print("-Digite a descrição das atribuições/funcões do departamento: ");
                     descricao = leitor.nextLine();
                     System.out.print("- Digite o salário (base) do departamento: ");
                     salario = Float.parseFloat(leitor.next());
                     System.out.print("- Informe o bônus atribuído ao departamento: ");
                     bonus = Float.parseFloat(leitor.next());
+                    
+                if (quantidadeDepartamentos >= MAXIMO_DEPARTAMENTOS) {
+                    System.out.println("Quantidade limite de departamentos, atingida.");
+                    break;
+                }
 
                     if (opcao == OPCAO_TECNOLOGIA) {
                         String area;
@@ -74,14 +79,15 @@ public class App {
         }
 
         leitor.close();
-        /*        if (quantidadeDepartamentos >= 0) {
+            if ((quantidadeDepartamentos >= 0) && ((tecnologia != null) &&  (eletrica != null))) {
             int d;
 
-            tecnologia.imprimeDadosDepartamento();
-            eletrica.imprimeDadosDepartamento();
+            for (d = 0; d < MAXIMO_DEPARTAMENTOS; d++){
+                tecnologia.imprimeDadosDepartamento();
+                eletrica.imprimeDadosDepartamento();
+            }
         }else {
-            System.out.println("Departamentos vazios.\n");
+            System.out.println("Departamentos vazios ou inexistentes.\n");
         }
-        */
     }
 }
