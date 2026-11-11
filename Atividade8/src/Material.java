@@ -40,6 +40,9 @@ public abstract class Material {
     }
 
     public void imprimeDadosMaterial() {
-        // A fazer;
+        System.out.println("# Título: " + getTitulo());
+        System.out.println("# ID - Identificador: " + getId());
+        System.out.println("# Preco: R$" + getPreco());
+        System.out.println("# Ano de Publicacao: " + getAnoPublicacao());
     }
 }
