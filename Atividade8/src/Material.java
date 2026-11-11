@@ -39,7 +39,7 @@ public abstract class Material {
         this.anoPublicacao = anoPublicacao;
     }
 
-    public void imprimeDadaosMaterial() {
+    public void imprimeDadosMaterial() {
         // A fazer;
     }
 }
