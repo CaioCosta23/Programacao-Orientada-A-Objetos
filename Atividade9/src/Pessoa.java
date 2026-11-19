@@ -1,23 +1,14 @@
 public abstract class Pessoa {
-    private String cpf;
-    private String estado;
+    private Estado estado;
 
     public Pessoa() {
     }
 
-    protected String getCpf() {
-        return this.cpf;
-    }
-
-    protected void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getEstado() {
+    public Estado getEstado() {
         return this.estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(Estado estado) {
         this.estado = estado;
     }
 }
