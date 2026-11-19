@@ -25,4 +25,8 @@ public class Leitor {
     public int leNumeroCandidato() {
         return Leitor.leitorDados.nextInt();
     }
+
+    public float lePatrimonio() {
+        return Leitor.leitorDados.nextFloat();
+    }
 }
