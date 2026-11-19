@@ -1,4 +1,4 @@
-public class Candidato extends Fisica {
+public class Candidato extends Pessoa {
     private int numero;
     private Partido partido;
 

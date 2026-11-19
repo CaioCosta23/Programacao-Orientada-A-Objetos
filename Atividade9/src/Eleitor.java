@@ -1,4 +1,4 @@
-public class Eleitor extends Fisica{
+public class Eleitor extends Pessoa{
     private String titulo;
 
     public Eleitor() {
