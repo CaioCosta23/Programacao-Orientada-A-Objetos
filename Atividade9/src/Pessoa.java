@@ -3,7 +3,10 @@ public abstract class Pessoa {
     private String cpf;
     private Estado estado;
 
-    public Pessoa() {
+    public Pessoa(String nome, String cpf, Estado estado) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.estado = estado;
     }
 
     public String getNome() {
