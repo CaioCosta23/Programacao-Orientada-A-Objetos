@@ -4,13 +4,14 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner leitor = new Scanner(System.in);
 
-        final int ADICIONAR = 1, EDITAR = 2, OPCAO_TECNOLOGIA = 1, OPCAO_ELETRICA = 2, MAXIMO_DEPARTAMENTOS = 2;
+        final int ADICIONAR = 1, EDITAR = 2, OPCAO_TECNOLOGIA = 1, OPCAO_ELETRICA = 2, MAXIMO_DEPARTAMENTOS = 2, ENCERRAR = 3;
         final String TECNOLOGIA = "Tecnologia", ELETRICA = "Eletrica";
         
         int operacao, opcao;
         int quantidadeDepartamentos = 0;
         String descricao;
         float salario, bonus;
+        boolean sair = false;
 
         Departamento tecnologia = null, eletrica = null;
 
@@ -31,7 +32,7 @@ public class App {
 
             switch(operacao) {
                 case ADICIONAR:
-                    System.out.print("-Digite a descrição das atribuições/funcões do departamento: ");
+                    System.out.print("- Digite a descrição das atribuições/funcões do departamento: ");
                     descricao = leitor.nextLine();
                     System.out.print("- Digite o salário (base) do departamento: ");
                     salario = Float.parseFloat(leitor.next());
@@ -71,10 +72,16 @@ public class App {
                     if (quantidadeDepartamentos < 1)
                             System.out.println("* Não é possível editar departamentos pois a lista de departamentos está vazia.");
                     break;
+                case ENCERRAR:
+                    sair = true;
+                    break;
                 default:
                     System.out.println("Operação inexistente no sistema! Informe uma opção de departamento válida (1 ou 2).");
                     break;
             }
+
+            if (sair == true)
+                break;
 
         }
 
