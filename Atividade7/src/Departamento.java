@@ -27,16 +27,20 @@ public abstract class Departamento {
         this.descricao = descricao;
     }
 
+    protected float getSalario() {
+        return Departamento.salario;
+    }
+
     protected void setSalario(float salario) {
         Departamento.salario = salario;
     }
 
     public float getBonus(){
-        return DepartamentoTecnologia.bonus;
+        return Departamento.bonus;
     }
 
     protected void setBonus(float bonus) {
-        DepartamentoTecnologia.bonus = bonus;
+        Departamento.bonus = bonus;
     }
 
     public abstract void imprimeDadosDepartamento();
