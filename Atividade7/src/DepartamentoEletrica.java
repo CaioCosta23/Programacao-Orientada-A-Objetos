@@ -1,4 +1,5 @@
 public class DepartamentoEletrica extends Departamento implements Operacoes {
+    private static final int id = 2;
     private final String areaApoio;
     private String especializacao;
     
@@ -6,6 +7,10 @@ public class DepartamentoEletrica extends Departamento implements Operacoes {
         super(nome, descricao, salario, bonus);
         this.areaApoio = areaApoio;
         this.especializacao = especializacao;
+    }
+
+    public int getId() {
+        return DepartamentoEletrica.id;
     }
 
     public String getAreaApoio() {
@@ -22,14 +27,14 @@ public class DepartamentoEletrica extends Departamento implements Operacoes {
 
     @Override
     public float calculaSalarioTotal() {
-        return Departamento.salario + (Departamento.bonus * Departamento.salario);
+        return super.getSalario() + (super.getBonus() * super.getSalario());
     }
 
     @Override
     public void imprimeDadosDepartamento() {
         System.out.println("- Nome: " + this.getNome());
         System.out.println("- Descrição: " + this.getDescricao());
-        System.out.println("- Salário Base: " + Departamento.salario);
+        System.out.println("- Salário Base: " + super.getSalario());
         System.out.println("- Salário Total: " + this.calculaSalarioTotal());
         System.out.println("- Área de apoio: " + this.getAreaApoio());
         System.out.println("- Especialização: " + this.getEspecializacao());
